@@ -1,0 +1,380 @@
+<DeepSVGWidget>:
+    orientation: "vertical"
+
+    Header:
+        id: header
+
+    BoxLayout:
+        orientation: "horizontal"
+
+        Sidebar:
+            id: sidebar_scroll
+
+        StencilView:
+            size_hint: 1, 1
+
+            canvas.before:
+                Color:
+                    rgb: 0.89, 0.89, 0.89
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            EditorView:
+                id: editor
+
+    TimeLine:
+        id: timeline_scroll
+
+
+<Header>:
+    orientation: "horizontal"
+    size_hint_y: None
+    height: 50
+
+    canvas.before:
+        Color:
+            rgb: 0, 0, 0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    HeaderIcon:
+        source: "deepsvg/gui/res/hand.png"
+        index: 0
+
+    HeaderIcon:
+        source: "deepsvg/gui/res/pen.png"
+        index: 1
+
+    HeaderIcon:
+        source: "deepsvg/gui/res/pencil.png"
+        index: 2
+
+    Padding
+
+    HeaderButton:
+        text: "Clear all"
+        on_press: root.on_erase()
+
+    Padding
+
+    HeaderButton:
+        text: "Done"
+        on_press: root.on_done()
+
+    Label
+
+    Padding
+
+    TitleWidget:
+        text: root.title
+        on_text: root.on_title(self.text)
+
+    Padding
+
+    Label
+
+    HeaderButton:
+        text: "Add frame"
+        on_press: root.add_frame()
+
+    Padding
+
+    HeaderButton:
+        text: "Interpolate"
+        on_press: root.interpolate()
+
+    Padding
+
+    HeaderIcon:
+        index: 3
+        source: "deepsvg/gui/res/pause.png" if root.is_playing else "deepsvg/gui/res/play.png"
+        on_press: root.pause_animation() if root.is_playing else root.play_animation()
+
+
+<TitleWidget>:
+    size_hint_x: None
+    width: 150
+
+    multiline: False
+    background_color: 0, 0, 0, 1
+    background_active: ""
+    background_normal: ""
+    halign: "center"
+    valign: "middle"
+    foreground_color: 1, 1, 1, 1
+    hint_text_color: 1, 1, 1, 1
+    cursor_color: 1, 1, 1, 1
+
+<Sidebar>:
+    do_scroll_x: False
+    size_hint_x: None
+    width: 225
+
+    canvas.before:
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+        Color:
+            rgb: 0.8, 0.8, 0.8
+        Line:
+            width: 1
+            rectangle: self.x, self.y, self.width, self.height
+
+    BoxLayout:
+        id: sidebar
+
+        orientation: "vertical"
+        size_hint_y: None
+        height: self.children[0].height * len(self.children) if self.children else 0
+
+
+<PathLayerView>
+    orientation: "horizontal"
+    size_hint_y: None
+    height: 40
+
+    canvas:
+        Color:
+            rgb: (0.08, 0.58, 0.97) if self.parent is not None and self.index == self.parent.parent.selected_path_idx else (1, 1, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgb: 0.8, 0.8, 0.8
+        Line:
+            width: 1
+            rectangle: self.x, self.y, self.width, self.height
+
+    Label:
+        color: 0, 0, 0, 1
+        size_hint_x: None
+        text: str(root.index)
+        width: self.texture_size[0]
+        padding_x: 10
+
+    Label
+
+    Image:
+        size_hint_x: None
+        source: root.source
+        nocache: True
+
+    Label
+
+    UpButton
+
+    DownButton
+
+    Padding
+
+    ReverseButton
+
+    Label
+
+
+<UpButton>:
+    size_hint: None, None
+    height: 0.6 * self.parent.height
+    pos_hint: {'top': 0.8}
+    width: self.height
+
+    background_normal: ""
+    background_down: ""
+    background_color: 0.3, 0.3, 0.3, 1
+
+    Image:
+        source: "deepsvg/gui/res/up.png"
+        center: self.parent.center
+
+<DownButton>:
+    size_hint: None, None
+    height: 0.6 * self.parent.height
+    pos_hint: {'top': 0.8}
+    width: self.height
+
+    background_normal: ""
+    background_down: ""
+    background_color: 0.3, 0.3, 0.3, 1
+
+    Image:
+        source: "deepsvg/gui/res/down.png"
+        center: self.parent.center
+
+<ReverseButton>:
+    size_hint: None, None
+    height: 0.6 * self.parent.height
+    pos_hint: {'top': 0.8}
+    width: self.height
+
+    background_normal: ""
+    background_down: ""
+    background_color: 0.3, 0.3, 0.3, 1
+
+    Image:
+        source: "deepsvg/gui/res/switch.png"
+        center: self.parent.center
+
+
+<BezierSegment>:
+    canvas:
+        Color:
+            rgb: .769, .769, .769
+        Line:
+            points: [*self.p1, *self.q1] if root.parent and root.parent.selected and self.is_curved else []
+            dash_length: 5
+            dash_offset: 5
+        Line:
+            points: [*self.q2, *self.p2] if root.parent and root.parent.selected and self.is_curved else []
+            dash_length: 5
+            dash_offset: 5
+        Color:
+            rgb: tuple(root.parent.color) if root.parent is not None else (.043, .769, 1)
+        Line:
+            bezier: ([*self.p1, *self.q1, *self.q2, *self.p2] if self.is_curved else [*self.p1, *self.p2]) if self.is_finished else [-10000, -10000]
+            width: 1.1
+        Color:
+            rgb: 1, .616, .043
+        Point:
+            points: [*self.p1, *self.p2] if root.parent and root.parent.selected else []
+            pointsize: 1.5
+        Color:
+            rgb: .769, .769, .769
+        Point:
+            points: [*self.q1, *self.q2] if self.is_curved and root.parent and root.parent.selected else []
+            pointsize: 1.5
+
+
+<BezierPath>
+
+
+<Sketch>:
+    canvas:
+        Color:
+            rgb: root.color
+        Line:
+            points: root.points
+            width: 1.2
+
+
+<EditorView>:
+    size_hint: None, None
+    size: draw_viewbox.size
+    center: self.parent.center
+    scale: 1.5
+
+    DrawViewbox:
+        id: draw_viewbox
+
+
+<DrawViewbox>
+    size: 256, 256
+
+    canvas.before:
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<TimeLine>:
+    do_scroll_y: False
+    size_hint_y: None
+    height: 50
+
+    canvas.before:
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+        Color:
+            rgb: 0.8, 0.8, 0.8
+        Line:
+            width: 1
+            rectangle: self.x, self.y, self.width, self.height
+
+    BoxLayout:
+        id: timeline
+
+        orientation: "horizontal"
+        size_hint_x: None
+        width: 50 * len(self.children) if self.children else 0
+
+
+<FrameView>
+    size_hint_x: None
+    width: self.height
+
+    color: 0, 0, 0, 1
+    text: str(self.index)
+
+    background_normal: ""
+    background_down: ""
+    background_color: (0.08, 0.58, 0.97, 1) if self.parent and self.index == self.parent.parent.selected_frame and self.keyframe else (0.48, 0.78, 1, 1) if self.parent and self.index == self.parent.parent.selected_frame and not self.keyframe else (1, 0.67, 0.19, 1) if self.keyframe else (1, 1, 1, 1)
+
+    canvas:
+        Color:
+            rgb: 0.8, 0.8, 0.8
+        Line:
+            width: 1
+            rectangle: self.x, self.y, self.width, self.height
+
+
+<HeaderIcon>:
+    size_hint_x: None
+    width: self.height
+
+    canvas:
+        Color:
+            rgb: (0.08, 0.58, 0.97) if self.index == self.parent.selected_tool else (0, 0, 0)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Image:
+        source: self.parent.source
+        center: self.parent.center
+
+<HeaderButton>:
+    size_hint: None, None
+    height: 0.8 * self.parent.height
+    pos_hint: {'top': 0.9}
+    width: self.texture_size[0] + 40
+
+<Padding>:
+    size_hint_x: None
+    width: 10
+
+
+
+<FileChoosePopup>:
+    title: "Import SVG file"
+    size_hint: .9, .9
+    auto_dismiss: True
+
+    BoxLayout:
+        orientation: "vertical"
+        FileChooserIconView:
+            id: filechooser
+            path: root.path
+
+        BoxLayout:
+            size_hint_x: 1
+            size_hint_y: None
+            height: 50
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            spacing: 20
+            Button:
+                text: "Cancel"
+                on_release: root.dismiss()
+            Button:
+                text: "Load"
+                on_release: root.load(filechooser.selection)
+                id: ldbtn
+                disabled: True if filechooser.selection==[] else False
+
