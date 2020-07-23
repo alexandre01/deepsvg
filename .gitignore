@@ -1,4 +1,6 @@
-*/.DS_Store
+**/.DS_Store
+__pycache__/
 .idea/
 logs/
 *.mp4
+gui_data/
