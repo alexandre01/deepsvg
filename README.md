@@ -164,7 +164,15 @@ We provide sample code in `notebooks/interpolate.ipynb` to perform interpolation
 and `notebooks/latent_ops.ipynb` for word2vec-like operations in the SVG latent space, as shown in the experiments of our paper.
 
 
+## Notebooks
 
+| Description                                  | Link to notebook                                     |
+|----------------------------------------------|------------------------------------------------------|
+| SVGLib walk-through                          | [svglib.ipynb](notebooks/svglib.ipynb)               |
+| Differentiable SVGTensor optimization        | [svgtensor.ipynb](notebooks/svgtensor.ipynb)         |
+| DeepSVG interpolation between pairs of icons | [interpolation.ipynb](notebooks/interpolation.ipynb) |
+| DeepSVG latent space operations              | [latent_ops.ipynb](notebooks/latent_ops.ipynb)       |
+| DeepSVG animation between user-drawn images  | [animation.ipynb](notebooks/animation.ipynb)         |
 
 ## Citation
 If you find this code useful in your research, please cite:
