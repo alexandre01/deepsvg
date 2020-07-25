@@ -88,7 +88,8 @@ deepsvg
 For full flexbility and more research freedom, we however recommend downloading the original SVG icons from [icons8](https://icons8.com), for which you will need a paid plan.
 Instructions to download the dataset from source are coming soon.
 
-Download the mini Fonts-dataset by running:
+To download the Font-dataset, we recommend following SVG-VAE's instructions: https://github.com/magenta/magenta/tree/master/magenta/models/svg_vae
+For demo purposes, we also release a mini version of the dataset. To download it run:
 ```
 cd dataset/
 bash download_fonts.sh
