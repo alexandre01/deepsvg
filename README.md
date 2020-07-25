@@ -88,14 +88,14 @@ deepsvg
 For full flexbility and more research freedom, we however recommend downloading the original SVG icons from [icons8](https://icons8.com), for which you will need a paid plan.
 Instructions to download the dataset from source are coming soon.
 
-To download the Font-dataset, we recommend following SVG-VAE's instructions: https://github.com/magenta/magenta/tree/master/magenta/models/svg_vae
-For demo purposes, we also release a mini version of the dataset. To download it run:
+To download the Font-dataset, we recommend following SVG-VAE's instructions: https://github.com/magenta/magenta/tree/master/magenta/models/svg_vae.
+For demo purposes, we also release a mini version of the dataset. To download it, run:
 ```
 cd dataset/
 bash download_fonts.sh
 ```
 
-Or download the dataset manually from Google Drive, and place the files in the `dataset` folder then unzip.
+Or use these links:
 - `fonts_meta.csv` (6 MB): https://drive.google.com/file/d/1PEukDlZ6IkEhh9XfTTMMtFOwdXOC3iKn/view?usp=sharing
 - `fonts_tensor.zip` (92 MB): https://drive.google.com/file/d/15xPf2FrXaHZ0bf6htZzc9ORTMGHYz9DX/view?usp=sharing
 
@@ -190,7 +190,7 @@ and `notebooks/latent_ops.ipynb` for word2vec-like operations in the SVG latent 
 | DeepSVG interpolation between pairs of icons | [interpolation.ipynb](notebooks/interpolation.ipynb) |
 | DeepSVG latent space operations              | [latent_ops.ipynb](notebooks/latent_ops.ipynb)       |
 | DeepSVG animation between user-drawn images  | [animation.ipynb](notebooks/animation.ipynb)         |
-| DeepSVG generation of Fonts                  | [fonts.ipynb](notebooks/fonts.ipynb)                 |
+| DeepSVG generation and interpolation of Fonts| [fonts.ipynb](notebooks/fonts.ipynb)                 |
 
 ## Citation
 If you find this code useful in your research, please cite:
