@@ -6,5 +6,5 @@ class Config(Config):
         super().__init__(num_gpus=num_gpus)
 
         # Dataset
-        self.data_dir = ""  # TODO
-        self.meta_filepath = ""  # TODO
+        self.data_dir = "./dataset/fonts_tensor/"
+        self.meta_filepath = "./dataset/fonts_meta.csv"

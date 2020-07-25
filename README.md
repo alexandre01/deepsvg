@@ -30,6 +30,11 @@ This repository includes:
 - The **SVG-Icons8 dataset**.
 - A **Graphical user interface** showing a demo of DeepSVG for vector graphics animation. 
 
+
+## Updates
+- July 25th: Added pretrained models and notebook for Font generation. 
+
+
 ## Installation
 
 Start by cloning this Git repository:
@@ -82,6 +87,16 @@ deepsvg
 > **NOTE**: The `icons_tensor/` folder contains the 100k icons in pre-augmented PyTorch tensor format, which enables to easily reproduce our work.
 For full flexbility and more research freedom, we however recommend downloading the original SVG icons from [icons8](https://icons8.com), for which you will need a paid plan.
 Instructions to download the dataset from source are coming soon.
+
+Download the mini Fonts-dataset by running:
+```
+cd dataset/
+bash download_fonts.sh
+```
+
+Or download the dataset manually from Google Drive, and place the files in the `dataset` folder then unzip.
+- `fonts_meta.csv` (6 MB): https://drive.google.com/file/d/1PEukDlZ6IkEhh9XfTTMMtFOwdXOC3iKn/view?usp=sharing
+- `fonts_tensor.zip` (92 MB): https://drive.google.com/file/d/15xPf2FrXaHZ0bf6htZzc9ORTMGHYz9DX/view?usp=sharing
 
 ## Deep learning SVG library
 DeepSVG has been developed along with a library for deep learning with SVG data. The main features are:

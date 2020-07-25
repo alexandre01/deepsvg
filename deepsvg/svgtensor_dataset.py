@@ -66,6 +66,14 @@ class SVGTensorDataset(torch.utils.data.Dataset):
         return uni - 97 + 36
 
     @staticmethod
+    def _label_to_uni(label_id):
+        if 0 <= label_id <= 9:
+            return label_id + 48
+        elif 10 <= label_id <= 35:
+            return label_id + 65 - 10
+        return label_id + 97 - 36
+
+    @staticmethod
     def _category_to_label(category):
         categories = ['characters', 'free-icons', 'logos', 'alphabet', 'animals', 'arrows', 'astrology', 'baby', 'beauty',
                       'business', 'cinema', 'city', 'clothing', 'computer-hardware', 'crime', 'cultures', 'data', 'diy',
@@ -76,7 +84,7 @@ class SVGTensorDataset(torch.utils.data.Dataset):
                       'users', 'weather', 'flags', 'emoji', 'men', 'women']
         return categories.index(category)
 
-    def get_label(self, idx, entry=None):
+    def get_label(self, idx=0, entry=None):
         if entry is None:
             entry = self.df.iloc[idx]
 
@@ -109,6 +117,10 @@ class SVGTensorDataset(torch.utils.data.Dataset):
     def random_id(self):
         idx = random.randrange(0, len(self)) % len(self.df)
         return self.idx_to_id(idx)
+
+    def random_id_by_uni(self, uni):
+        df = self.df[self.df.uni == uni]
+        return df.id.sample().iloc[0]
 
     def __getitem__(self, idx):
         return self.get(idx, self.model_args)
