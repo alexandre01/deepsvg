@@ -157,7 +157,8 @@ bash download.sh
 ```
 
 If this doesn't work, you can download them manually from Google Drive and place them in the `pretrained` folder.
-- `hierarchical_ordered.pth.tar` (42 MB): https://drive.google.com/file/d/1tsVx_cnFunSf5vvPWPVTjZ84IQC2pIDm/view?usp=sharing
+- `hierarchical_ordered.pth.tar` (41 MB): https://drive.google.com/file/d/1tsVx_cnFunSf5vvPWPVTjZ84IQC2pIDm/view?usp=sharing
+- `hierarchical_ordered_fonts.pth.tar` (41 MB): https://drive.google.com/file/d/11KBUWfexw3LDvSFOVxy072_VCFYKm3L-/view?usp=sharing
 
 
 We provide sample code in `notebooks/interpolate.ipynb` to perform interpolation between pairs of SVG icons
@@ -173,6 +174,7 @@ and `notebooks/latent_ops.ipynb` for word2vec-like operations in the SVG latent 
 | DeepSVG interpolation between pairs of icons | [interpolation.ipynb](notebooks/interpolation.ipynb) |
 | DeepSVG latent space operations              | [latent_ops.ipynb](notebooks/latent_ops.ipynb)       |
 | DeepSVG animation between user-drawn images  | [animation.ipynb](notebooks/animation.ipynb)         |
+| DeepSVG generation of Fonts                  | [fonts.ipynb](notebooks/fonts.ipynb)                 |
 
 ## Citation
 If you find this code useful in your research, please cite:

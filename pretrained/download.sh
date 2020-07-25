@@ -8,4 +8,5 @@ function gdrive_download () {
 
 echo "Downloading pretrained models..."
 gdrive_download 1tsVx_cnFunSf5vvPWPVTjZ84IQC2pIDm hierarchical_ordered.pth.tar
+gdrive_download 11KBUWfexw3LDvSFOVxy072_VCFYKm3L- hierarchical_ordered_fonts.pth.tar
 echo "Done."
