@@ -570,5 +570,5 @@ class SVG:
             self.svg_path_groups = [self.svg_path_groups[i] for i in indices]
         return self
 
-    def fill_(self):
-        return self._apply_to_paths("fill_")
+    def fill_(self, fill=True):
+        return self._apply_to_paths("fill_", fill)

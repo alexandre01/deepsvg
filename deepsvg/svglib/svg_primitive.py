@@ -57,8 +57,8 @@ class SVGPrimitive:
     def bbox(self):
         raise NotImplementedError
 
-    def fill_(self):
-        self.fill = True
+    def fill_(self, fill=True):
+        self.fill = fill
         return self
 
 
