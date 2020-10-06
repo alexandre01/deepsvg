@@ -131,7 +131,7 @@ Similarly to [PyTorch3D](https://github.com/facebookresearch/pytorch3d), differe
 Interestingly, using a lower number of Bézier commands in the initial circle (n) creates somehow artistic approximations of the target shape.
 See `notebooks/svgtensor.ipynb`.
 
-| n |     4       |        4       |        16       |         32      |
+| n |     4       |        8       |        16       |         32      |
 |---|-------------|----------------|-----------------|-----------------|
 | optimization |![dolpin_optim_4](docs/imgs/dolphin_optim/dolpin_optim_4.gif)|![dolpin_optim_8](docs/imgs/dolphin_optim/dolpin_optim_8.gif)|![dolpin_optim_16](docs/imgs/dolphin_optim/dolpin_optim_16.gif)|![dolpin_optim_32](docs/imgs/dolphin_optim/dolpin_optim_32.gif)|
 
