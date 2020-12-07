@@ -20,6 +20,7 @@ Please refer to section [below](#citation) for Citation details.
 - Code: [GitHub](https://github.com/alexandre01/deepsvg)
 - Project page: [link](https://alexandre01.github.io/deepsvg)
 - 1min video:
+
 [![DeepSVG video](docs/imgs/thumbnail.jpg)](https://youtu.be/w9Bu4u-SsKQ)
 
 
