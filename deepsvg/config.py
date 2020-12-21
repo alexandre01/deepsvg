@@ -29,6 +29,7 @@ class _Config:
 
         # Dataset
         self.train_ratio = 1.0                                #
+        self.nb_augmentations = 1                             #
 
         self.max_num_groups = 15                              #
         self.max_seq_len = 30                                 #
