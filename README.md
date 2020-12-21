@@ -35,7 +35,11 @@ This repository includes:
 
 
 ## Updates
-- July 25th: Added pretrained models and notebook for Font generation. 
+- December 2020: Added raw SVG dataloader (see [Dataloader](#dataloader) section).
+
+- September 2020: Accepted to NeurIPS2020 🎉
+
+- July 2020: Added pretrained models and notebook for Font generation. 
 
 
 ## Installation
@@ -101,6 +105,26 @@ bash download_fonts.sh
 Or use these links:
 - `fonts_meta.csv` (6 MB): https://drive.google.com/file/d/1PEukDlZ6IkEhh9XfTTMMtFOwdXOC3iKn/view?usp=sharing
 - `fonts_tensor.zip` (92 MB): https://drive.google.com/file/d/15xPf2FrXaHZ0bf6htZzc9ORTMGHYz9DX/view?usp=sharing
+
+
+## Dataloader
+To process a custom dataset of SVGs, use the `SVGDataset` dataloader.
+To preprocess them on the fly, you can set `already_preprocessed` to `False`, but we recommend preprocessing them before training for better I/O performance.
+
+To do so, use the `dataset/preprocess.py` script:
+```shell script
+python -m dataset.preprocess --data_folder dataset/svgs/ --output_folder dataset/svgs_simplified/ --output_meta_file dataset/svg_meta.csv
+```
+
+This will preprocess all input svgs in a multi-threaded way and generate a meta data file, for easier training filtering.
+
+Then modify the training configuration by providing the correct dataloader module, data folder and meta data file:
+
+``` python
+cfg.dataloader_module = "deepsvg.svg_dataset"
+cfg.data_dir = "./dataset/svgs_simplified/"
+cfg.meta_filepath = "./dataset/svg_meta.csv"
+```
 
 ## Deep learning SVG library
 DeepSVG has been developed along with a library for deep learning with SVG data. The main features are:
