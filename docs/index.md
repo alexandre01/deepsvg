@@ -2,7 +2,14 @@
 
 Paper: [arXiv](https://arxiv.org/abs/2007.11301) <br />
 Code: [GitHub](https://github.com/alexandre01/deepsvg) <br />
-Project page: [link](https://alexandre01.github.io/deepsvg)
+Project page: [link](https://alexandre01.github.io/deepsvg) <br />
+AI Unfolded: [link](https://aiunfolded.co/ai/deepsvg)
+
+<p align="center">
+    <a href="https://aiunfolded.co">
+        <img alt="AIUnfolded" src="https://www.aiunfolded.co/featured.svg" height=75>
+    </a>
+</p>
 
 ## Introduction
 Our model:
