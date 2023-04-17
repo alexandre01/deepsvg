@@ -7,9 +7,13 @@
     <a href="https://github.com/alexandre01/deepsvg/blob/master/LICENCE">
         <img alt="Licence" src="https://img.shields.io/github/license/alexandre01/deepsvg.svg?color=blue">
     </a>
-    <a href="https://blog.alexandrecarlier.com/deepsvg/index.html">
-        <img alt="Website" src="https://img.shields.io/website/http/blog.alexandrecarlier.com/deepsvg/index.html.svg?down_color=red&down_message=offline&up_message=online">
+    <a href="https://aiunfolded.co">
+        <img alt="AIUnfolded" src="https://aiunfolded.co/badge.svg">
     </a>
+    <a href="https://alexandre01.github.io/deepsvg/">
+        <img alt="Website" src="https://img.shields.io/website/http/alexandre01.github.io/deepsvg/index.html.svg?down_color=red&down_message=offline&up_message=online">
+    </a>
+    
 </p>
 
 ## Introduction
@@ -19,6 +23,14 @@ Please refer to section [below](#citation) for Citation details.
 - Paper: [arXiv](https://arxiv.org/abs/2007.11301)
 - Code: [GitHub](https://github.com/alexandre01/deepsvg)
 - Project page: [link](https://alexandre01.github.io/deepsvg)
+- Featured on AIUnfolded:
+
+<p align="center">
+    <a href="https://aiunfolded.co">
+        <img alt="AIUnfolded" src="https://www.aiunfolded.co/featured.svg" height=75>
+    </a>
+</p>
+
 - 1min video:
 
 [![DeepSVG video](docs/imgs/thumbnail.jpg)](https://youtu.be/w9Bu4u-SsKQ)
