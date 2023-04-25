@@ -3,7 +3,8 @@
 Paper: [arXiv](https://arxiv.org/abs/2007.11301) <br />
 Code: [GitHub](https://github.com/alexandre01/deepsvg) <br />
 Project page: [link](https://alexandre01.github.io/deepsvg) <br />
-AI Unfolded: [link](https://www.aiunfolded.co/ai/deepsvg)
+AI Unfolded: [link](https://www.aiunfolded.co/ai/deepsvg) <br />
+Reshot AI: [link](https://www.reshot.ai)
 
 <p align="center">
     <a href="https://www.aiunfolded.co">

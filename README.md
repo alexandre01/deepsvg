@@ -23,6 +23,7 @@ Please refer to section [below](#citation) for Citation details.
 - Paper: [arXiv](https://arxiv.org/abs/2007.11301)
 - Code: [GitHub](https://github.com/alexandre01/deepsvg)
 - Project page: [link](https://alexandre01.github.io/deepsvg)
+- Reshot AI: [link](https://www.reshot.ai)
 - Featured on AI Unfolded:
 
 <p align="center">
