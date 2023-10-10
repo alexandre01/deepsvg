@@ -24,6 +24,7 @@ Please refer to section [below](#citation) for Citation details.
 - Code: [GitHub](https://github.com/alexandre01/deepsvg)
 - Project page: [link](https://alexandre01.github.io/deepsvg)
 - Reshot AI: [link](https://www.reshot.ai)
+- LingoSub: [link](https://www.lingosub.com)
 - Featured on AI Unfolded:
 
 <p align="center">
