@@ -25,6 +25,7 @@ Please refer to section [below](#citation) for Citation details.
 - Project page: [link](https://alexandre01.github.io/deepsvg)
 - Reshot AI: [link](https://www.reshot.ai)
 - LingoSub: [link](https://www.lingosub.com)
+- ClipLaunch: [link](https://www.cliplaunch.com)
 - Featured on AI Unfolded:
 
 <p align="center">

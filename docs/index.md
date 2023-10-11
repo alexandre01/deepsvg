@@ -4,8 +4,9 @@ Paper: [arXiv](https://arxiv.org/abs/2007.11301) <br />
 Code: [GitHub](https://github.com/alexandre01/deepsvg) <br />
 Project page: [link](https://alexandre01.github.io/deepsvg) <br />
 AI Unfolded: [link](https://www.aiunfolded.co/ai/deepsvg) <br />
-Reshot AI: [link](https://www.reshot.ai)
-LingoSub: [link](https://www.lingosub.com)
+Reshot AI: [link](https://www.reshot.ai) <br />
+LingoSub: [link](https://www.lingosub.com) <br />
+ClipLaunch: [link](https://www.cliplaunch.com) <br />
 
 <p align="center">
     <a href="https://www.aiunfolded.co">
