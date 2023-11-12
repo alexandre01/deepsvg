@@ -5,6 +5,7 @@ Code: [GitHub](https://github.com/alexandre01/deepsvg) <br />
 Project page: [link](https://alexandre01.github.io/deepsvg) <br />
 AI Unfolded: [link](https://www.aiunfolded.co/ai/deepsvg) <br />
 Reshot AI: [link](https://www.reshot.ai) <br />
+BricksAR: [link](https://www.bricksar.com) <br />
 LingoSub: [link](https://www.lingosub.com) <br />
 ClipLaunch: [link](https://www.cliplaunch.com) <br />
 
