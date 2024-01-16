@@ -249,8 +249,8 @@ class SVG:
 
     def merge_groups(self):
         path_group = self.svg_path_groups[0]
-        for path_group in self.svg_path_groups[1:]:
-            path_group.svg_paths.extend(path_group.svg_paths)
+        for group in self.svg_path_groups[1:]:
+            path_group.svg_paths.extend(group.svg_paths)
         self.svg_path_groups = [path_group]
         return self
 
