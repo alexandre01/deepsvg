@@ -17,6 +17,9 @@
 </p>
 
 ## Introduction
+
+**Sponsored by <img src="https://www.lingosub.com/icon.svg" height=20 width=20 style="vertical-align: middle;"/> [LingoSub](https://www.lingosub.com): Learn languages by watching videos with AI-powered translations**
+
 This is the official code for the paper "DeepSVG: A Hierarchical Generative Network for Vector Graphics Animation".
 Please refer to section [below](#citation) for Citation details.
 
