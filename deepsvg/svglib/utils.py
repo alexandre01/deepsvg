@@ -83,7 +83,7 @@ def to_gif(img_list, file_path=None, frame_duration=0.1, do_display=True):
     clip = concatenate_videoclips(clips, method="compose", bg_color=(255, 255, 255))
 
     if file_path is not None:
-        clip.write_gif(file_path, fps=24, verbose=False, logger=None)
+        clip.write_gif(file_path, fps=24, verbose=False)#, logger=None)
 
     if do_display:
         src = clip if file_path is None else file_path
