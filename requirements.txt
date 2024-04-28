@@ -17,7 +17,7 @@ pandas
 networkx
 moviepy
 numba
-sklearn
+scikit-learn
 umap-learn
 umap-learn[plot]
 shapely
