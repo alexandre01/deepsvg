@@ -144,6 +144,11 @@ class SVGTensor:
 
     def unpad(self):
         # Remove EOS + padding
+        eos_index = (self.commands == self.COMMANDS_SIMPLIFIED.index("EOS")).nonzero(as_tuple=True)[0]
+        if eos_index.nelement() == 0:
+            return self
+
+        self.seq_len = eos_index[0].item()
         for key in self.cmd_arg_keys:
             self.__setattr__(key, self.__getattribute__(key)[:self.seq_len])
         return self
